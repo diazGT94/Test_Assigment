@@ -10,6 +10,7 @@ RUN git clone https://github.com/diazGT94/Test_Assigment.git
 
 WORKDIR "/Test_Assigment"
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x script.sh
 
-CMD entrypoint.sh
+ENTRYPOINT ["sh","/script.sh"]
+
