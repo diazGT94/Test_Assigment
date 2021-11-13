@@ -12,5 +12,4 @@ WORKDIR "/Test_Assigment"
 
 RUN chmod +x script.sh
 
-ENTRYPOINT ["sh","/script.sh"]
-
+ENTRYPOINT ["sh","./script.sh"]
