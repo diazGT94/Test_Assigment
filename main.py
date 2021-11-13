@@ -12,8 +12,6 @@ def parse_args():
     parser.add_argument('-Model_function', '--Model_function', dest='Model_function', action='store_true',
                         help='Specify this flag for using the image function')
 
-    parser.add_argument('-Image_path', '--Image_path', type=str, default=None, help='Specify the path to the image.')
-    parser.add_argument('-Model_path', '--Model_path', type=str, default=None, help='Specify the path to the model.')
     args = parser.parse_args()
     return args
 
@@ -26,12 +24,12 @@ def main():
     radiuses=[]
     if args.Image_function:
         # Call the function from Holes
-        image_path = args.Image_path
+        image_path = './files/model_top_view.png'
         x,y = Holes_from_Image(image_path)
 
     if args.Model_function:
         # Call the function from STL
-        model_path = args.Model_path
+        model_path = './files/model.stl'
         centroids, radiuses = Holes_from_3DModel(model_path)
         for i in range(len(radiuses)):
             print('Hole#: ' + str(i + 1) + ' Centroid: ' + str(centroids[i]) + ' Radius: ' + str(radiuses[i]))
